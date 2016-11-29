@@ -1,6 +1,15 @@
 ls
+#File Cleanup
+Get-ChildItem -include "Torrent Downloaded From www.torrenting.com.txt" -recurse -force | Remove-Item -force
+
+
+#Image Cleanup
+Get-ChildItem -include "Screens" -recurse -force | Remove-Item -recurse -force -WhatIF
+Get-ChildItem -include "*.jpg" -recurse -force | Remove-Item -force -WhatIF
+Get-ChildItem -include "*.png" -recurse -force | Remove-Item -force -WhatIF
+
 #-------------------
-#Directory Cleanup
+#Directory Name Cleanup
 #-------------------
 echo "Common Replace"
 dir -directory | Rename-Item -NewName { $_.name.replace("x264","")} -erroraction 'silentlycontinue'
@@ -20,6 +29,7 @@ dir -directory | Rename-Item -NewName { $_.name.replace("CROOKS","")} -erroracti
 dir -directory | Rename-Item -NewName { $_.name.replace("ettv","")} -erroraction 'silentlycontinue'
 dir -directory | Rename-Item -NewName { $_.name.replace("rarbg","")} -erroraction 'silentlycontinue'
 dir -directory | Rename-Item -NewName { $_.name.replace("HDTS","")} -erroraction 'silentlycontinue'
+dir -directory | Rename-Item -NewName { $_.name.replace("www.torrenting.com - ","")} -erroraction 'silentlycontinue'
 dir            | Rename-Item -NewName { $_.name.replace("HDRip","")} -erroraction 'silentlycontinue'
 
 dir -file      | Rename-Item -NewName { $_.BaseName.replace(". "," ") + $_.Extension } -erroraction 'silentlycontinue'
@@ -207,3 +217,4 @@ For ($i=10; $i -le 20; $i++) {$i;dir | Rename-Item -NewName { $_.name.replace("E
 #
 #dir -file | New-Item -type directory -value $_.BaseName -WhatIf
 #
+
