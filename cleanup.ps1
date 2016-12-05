@@ -1,12 +1,16 @@
 ls
 #File Cleanup
-Get-ChildItem -include "Torrent Downloaded From www.torrenting.com.txt" -recurse -force | Remove-Item -force
+Get-ChildItem -include "Torrent Downloaded From www.torrenting.com.txt" -recurse -force | Remove-Item -force -erroraction 'silentlycontinue'
+Get-ChildItem -include "RARBG.com.txt" -recurse -force | Remove-Item -force -erroraction 'silentlycontinue'
+Get-ChildItem -include "Torrent-Downloaded-from-ExtraTorrent.cc.txt" -recurse -force | Remove-Item -force -erroraction 'silentlycontinue'
+Get-ChildItem -include "RARBG.COM.mp4" -recurse -force | Remove-Item -force -erroraction 'silentlycontinue'
 
 
 #Image Cleanup
-Get-ChildItem -include "Screens" -recurse -force | Remove-Item -recurse -force -WhatIF
-Get-ChildItem -include "*.jpg" -recurse -force | Remove-Item -force -WhatIF
-Get-ChildItem -include "*.png" -recurse -force | Remove-Item -force -WhatIF
+Get-ChildItem -include "Screens" -recurse -force | Remove-Item -recurse -force -erroraction 'silentlycontinue'
+Get-ChildItem -include "Sample" -recurse -force | Remove-Item -recurse -force -erroraction 'silentlycontinue'
+Get-ChildItem -include "*.jpg" -recurse -force | Remove-Item -force -erroraction 'silentlycontinue'
+Get-ChildItem -include "*.png" -recurse -force | Remove-Item -force -erroraction 'silentlycontinue'
 
 #-------------------
 #Directory Name Cleanup
@@ -29,7 +33,14 @@ dir -directory | Rename-Item -NewName { $_.name.replace("CROOKS","")} -erroracti
 dir -directory | Rename-Item -NewName { $_.name.replace("ettv","")} -erroraction 'silentlycontinue'
 dir -directory | Rename-Item -NewName { $_.name.replace("rarbg","")} -erroraction 'silentlycontinue'
 dir -directory | Rename-Item -NewName { $_.name.replace("HDTS","")} -erroraction 'silentlycontinue'
+dir -directory | Rename-Item -NewName { $_.name.replace("KILLERS","")} -erroraction 'silentlycontinue'
+dir -directory | Rename-Item -NewName { $_.name.replace("AVS","")} -erroraction 'silentlycontinue'
+dir -directory | Rename-Item -NewName { $_.name.replace("FLEET","")} -erroraction 'silentlycontinue'
+dir -directory | Rename-Item -NewName { $_.name.replace("XviDAFG","")} -erroraction 'silentlycontinue'
+dir -directory | Rename-Item -NewName { $_.name.replace("iNTERNAL","")} -erroraction 'silentlycontinue'
 dir -directory | Rename-Item -NewName { $_.name.replace("www.torrenting.com - ","")} -erroraction 'silentlycontinue'
+dir -directory | Rename-Item -NewName { $_.name.replace("[www.torrenting.com] - ","")} -erroraction 'silentlycontinue'
+dir -directory | Rename-Item -NewName { $_.name.replace("[ www.torrenting.com ] - ","")} -erroraction 'silentlycontinue'
 dir            | Rename-Item -NewName { $_.name.replace("HDRip","")} -erroraction 'silentlycontinue'
 
 dir -file      | Rename-Item -NewName { $_.BaseName.replace(". "," ") + $_.Extension } -erroraction 'silentlycontinue'
@@ -37,8 +48,8 @@ dir -directory | Rename-Item -NewName { $_.name.replace("."," ")} -erroraction '
 dir -directory | Rename-Item -NewName { $_.name.replace("-","")} -erroraction 'silentlycontinue'
 dir -directory | Rename-Item -NewName { $_.name.replace("_"," ")} -erroraction 'silentlycontinue'
 dir -directory | Rename-Item -NewName { $_.name.replace("[]"," ")} -erroraction 'silentlycontinue'
-For ($i=0; $i -le 20; $i++) {$i;dir -directory | Rename-Item -NewName { $_.name.replace("..",".")} -erroraction 'silentlycontinue'}
-For ($i=0; $i -le 20; $i++) {$i;dir -directory | Rename-Item -NewName { $_.name.replace("  "," ")} -erroraction 'silentlycontinue'}
+For ($i=0; $i -le 20; $i++) {Write-Host -NoNewline [$i];dir -directory | Rename-Item -NewName { $_.name.replace("..",".")} -erroraction 'silentlycontinue'}
+For ($i=0; $i -le 20; $i++) {Write-Host -NoNewline [$i];dir -directory | Rename-Item -NewName { $_.name.replace("  "," ")} -erroraction 'silentlycontinue'}
 
 #One-Offs
 dir -directory | Rename-Item -NewName { $_.name.replace("NeZu","")} -erroraction 'silentlycontinue'
@@ -77,15 +88,38 @@ For ($i=1900; $i -le 2016; $i++) {dir | Rename-Item -NewName { $_.name.replace("
 dir | Rename-Item -NewName { $_.name.replace("((","(")} -erroraction 'silentlycontinue'
 dir | Rename-Item -NewName { $_.name.replace("))",")")} -erroraction 'silentlycontinue'
 
+Write-Host;
+
+Write-Host;Write-Host -NoNewline Replacing SXX : 
+For ($i=0; $i -le 9; $i++) {Write-Host -NoNewline [$i];dir | Rename-Item -NewName { $_.name.replace(" S0$i"," - S0$i")} -erroraction 'silentlycontinue'}
+Write-Host;Write-Host -NoNewline Replacing SXX : 
+For ($i=10; $i -le 99; $i++) {Write-Host -NoNewline [$i];dir | Rename-Item -NewName { $_.name.replace(" S$i"," - S($i")} -erroraction 'silentlycontinue'}
+
+Write-Host;
+
+Write-Host;Write-Host -NoNewline Replacing EXX : 
+For ($i=0; $i -le 9; $i++) {Write-Host -NoNewline [$i];dir | Rename-Item -NewName { $_.name.replace("E0$i ","E0$i - ")} -erroraction 'silentlycontinue'}
+Write-Host;Write-Host -NoNewline Replacing EXX : 
+For ($i=0; $i -le 9; $i++) {Write-Host -NoNewline [$i];dir | Rename-Item -NewName { $_.name.replace("E0$i","E0$i - ")} -erroraction 'silentlycontinue'}
+Write-Host;Write-Host -NoNewline Replacing EXX : 
+For ($i=10; $i -le 99; $i++) {Write-Host -NoNewline [$i];dir | Rename-Item -NewName { $_.name.replace("E$i ","E$i - ")} -erroraction 'silentlycontinue'}
+Write-Host;Write-Host -NoNewline Replacing EXX : 
+For ($i=10; $i -le 99; $i++) {Write-Host -NoNewline [$i];dir | Rename-Item -NewName { $_.name.replace("E$i","E$i - ")} -erroraction 'silentlycontinue'}
+
+dir | Rename-Item -NewName { $_.name.replace("-  -","-")} -erroraction 'silentlycontinue'
+
+Write-Host
+ls
+Write-Host "Press any key to continue ..."
+
+$x = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+
+Write-Host
+Write-Host $x
 
 
-For ($i=0; $i -le 9; $i++) {$i;dir | Rename-Item -NewName { $_.name.replace(" S0$i"," - S0$i")} -erroraction 'silentlycontinue' -WhatIf}
-For ($i=10; $i -le 20; $i++) {$i;dir | Rename-Item -NewName { $_.name.replace(" S$i"," - S($i")} -erroraction 'silentlycontinue' -WhatIf}
 
-For ($i=0; $i -le 9; $i++) {$i;dir | Rename-Item -NewName { $_.name.replace("E0$i ","E0$i - ")} -erroraction 'silentlycontinue' -WhatIf}
-For ($i=0; $i -le 9; $i++) {$i;dir | Rename-Item -NewName { $_.name.replace("E0$i","E0$i - ")} -erroraction 'silentlycontinue' -WhatIf}
-For ($i=10; $i -le 20; $i++) {$i;dir | Rename-Item -NewName { $_.name.replace("E$i ","E$i - ")} -erroraction 'silentlycontinue' -WhatIf}
-For ($i=10; $i -le 20; $i++) {$i;dir | Rename-Item -NewName { $_.name.replace("E$i","E$i - ")} -erroraction 'silentlycontinue' -WhatIf}
+
 
 
 #######################################################################################################
@@ -218,3 +252,5 @@ For ($i=10; $i -le 20; $i++) {$i;dir | Rename-Item -NewName { $_.name.replace("E
 #dir -file | New-Item -type directory -value $_.BaseName -WhatIf
 #
 
+
+#For ($i=0; $i -le 20; $i++) {Write-Host -NoNewline [$i];}
