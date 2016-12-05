@@ -93,7 +93,7 @@ Write-Host;
 Write-Host;Write-Host -NoNewline Replacing SXX : 
 For ($i=0; $i -le 9; $i++) {Write-Host -NoNewline [$i];dir | Rename-Item -NewName { $_.name.replace(" S0$i"," - S0$i")} -erroraction 'silentlycontinue'}
 Write-Host;Write-Host -NoNewline Replacing SXX : 
-For ($i=10; $i -le 99; $i++) {Write-Host -NoNewline [$i];dir | Rename-Item -NewName { $_.name.replace(" S$i"," - S($i")} -erroraction 'silentlycontinue'}
+For ($i=10; $i -le 99; $i++) {Write-Host -NoNewline [$i];dir | Rename-Item -NewName { $_.name.replace(" S$i"," - S$i")} -erroraction 'silentlycontinue'}
 
 Write-Host;
 
