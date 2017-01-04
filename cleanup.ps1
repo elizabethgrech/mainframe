@@ -1,8 +1,9 @@
 ls
 #File Cleanup
 Get-ChildItem -include "Torrent Downloaded From www.torrenting.com.txt" -recurse -force | Remove-Item -force -erroraction 'silentlycontinue'
-Get-ChildItem -include "RARBG.com.txt" -recurse -force | Remove-Item -force -erroraction 'silentlycontinue'
 Get-ChildItem -include "Torrent-Downloaded-from-ExtraTorrent.cc.txt" -recurse -force | Remove-Item -force -erroraction 'silentlycontinue'
+Get-ChildItem -include "RARBG.txt" -recurse -force | Remove-Item -force -erroraction 'silentlycontinue'
+Get-ChildItem -include "RARBG.com.txt" -recurse -force | Remove-Item -force -erroraction 'silentlycontinue'
 Get-ChildItem -include "RARBG.COM.mp4" -recurse -force | Remove-Item -force -erroraction 'silentlycontinue'
 
 
