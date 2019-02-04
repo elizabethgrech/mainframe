@@ -1,5 +1,10 @@
 # Ansible Guide
 
+## Before Installation
+```
+(xenial)ico@localhost:~/Downloads/mainframe/ansible$ python --version
+Python 2.7.12
+```
 ## Installation
 
 See https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
@@ -254,7 +259,7 @@ Processing triggers for libc-bin (2.23-0ubuntu10) ...
 
 
 
-## After Install 
+## After Installation
 
 ```
 (xenial)ico@localhost:~/Downloads/mainframe/ansible$ ansible --version
