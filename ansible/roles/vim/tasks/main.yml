@@ -3,3 +3,13 @@
   copy:
     src: vimrc
     dest: /home/ico/.vimrc
+
+- name: Create Colorscheme directory
+  file:
+    path: /home/ico/.vim/colors
+    state: directory
+
+- name: Install vim colorscheme file(s)
+  copy:
+    src: sublimemonokai.vim
+    dest: /home/ico/.vim/colors/sublimemonokai.vim
