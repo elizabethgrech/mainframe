@@ -1,33 +1,33 @@
 # Ansible Guide
 
 ## Before Installation
-```
-(xenial)ico@localhost:~/Downloads/mainframe/ansible$ python --version
+
+Ensure Python is installed:
+
+```console
+$ python --version
 Python 2.7.12
 ```
+
 ## Installation
 
-See https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html
+For full installation commands, see the Ansible [installation
+guide](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html).
+Briefly, run the following commands as root:
 
-
-Ran the following commands:
-
+```sh
+apt-get install software-properties-common
+apt-add-repository --yes --update ppa:ansible/ansible
+apt-get install ansible
 ```
+
+Sample output:
+
+```console
 $ sudo apt-get install software-properties-common
-$ sudo apt-add-repository --yes --update ppa:ansible/ansible
-$ sudo apt-get install ansible
-```
-
-
-Sample Output:
-
-```
-(xenial)ico@localhost:~/Downloads/mainframe/ansible$ sudo apt-get install software-properties-common
-[sudo] password for ico: 
-Sorry, try again.
-[sudo] password for ico: 
+[sudo] password for ico:
 Reading package lists... Done
-Building dependency tree       
+Building dependency tree
 Reading state information... Done
 The following packages were automatically installed and are no longer required:
   libatk-wrapper-java libatk-wrapper-java-jni openjdk-9-jdk-headless openjdk-9-jre
@@ -47,7 +47,7 @@ Get:2 http://archive.ubuntu.com/ubuntu xenial/main amd64 python3-pycurl amd64 7.
 Get:3 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 python3-software-properties all 0.96.20.8 [20.2 kB]
 Get:4 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 software-properties-common all 0.96.20.8 [9440 B]
 Get:5 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 unattended-upgrades all 0.90ubuntu0.10 [32.3 kB]
-Fetched 187 kB in 1s (152 kB/s)               
+Fetched 187 kB in 1s (152 kB/s)
 Preconfiguring packages ...
 Selecting previously unselected package python3-dbus.
 (Reading database ... 86403 files and directories currently installed.)
@@ -83,7 +83,7 @@ invoke-rc.d: policy-rc.d denied execution of start.
 Processing triggers for dbus (1.10.6-1ubuntu3.3) ...
 Processing triggers for systemd (229-4ubuntu21.1) ...
 Processing triggers for ureadahead (0.100.0-19) ...
-(xenial)ico@localhost:~/Downloads/mainframe/ansible$ sudo apt-add-repository --yes --update ppa:ansible/ansible
+$ sudo apt-add-repository --yes --update ppa:ansible/ansible
 gpg: keyring `/tmp/tmpcv5c9hyb/secring.gpg' created
 gpg: keyring `/tmp/tmpcv5c9hyb/pubring.gpg' created
 gpg: requesting key 7BB9C367 from hkp server keyserver.ubuntu.com
@@ -92,9 +92,9 @@ gpg: key 7BB9C367: public key "Launchpad PPA for Ansible, Inc." imported
 gpg: Total number processed: 1
 gpg:               imported: 1  (RSA: 1)
 OK
-(xenial)ico@localhost:~/Downloads/mainframe/ansible$ sudo apt-get install ansible
+$ sudo apt-get install ansible
 Reading package lists... Done
-Building dependency tree       
+Building dependency tree
 Reading state information... Done
 The following packages were automatically installed and are no longer required:
   libatk-wrapper-java libatk-wrapper-java-jni openjdk-9-jdk-headless openjdk-9-jre
@@ -140,7 +140,7 @@ Get:23 http://archive.ubuntu.com/ubuntu xenial/main amd64 python-idna all 2.0-3 
 Get:24 http://archive.ubuntu.com/ubuntu xenial/main amd64 python-ipaddress all 1.0.16-1 [18.0 kB]
 Get:25 http://archive.ubuntu.com/ubuntu xenial/main amd64 python-pyasn1 all 0.1.9-1 [45.1 kB]
 Get:26 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 python-cryptography amd64 1.2.3-1ubuntu0.2 [199 kB]
-Fetched 9192 kB in 14s (656 kB/s)                                                                                                                     
+Fetched 9192 kB in 14s (656 kB/s)
 Selecting previously unselected package libyaml-0-2:amd64.
 (Reading database ... 86490 files and directories currently installed.)
 Preparing to unpack .../libyaml-0-2_0.1.6-3_amd64.deb ...
@@ -253,16 +253,14 @@ Setting up python-pyasn1 (0.1.9-1) ...
 Setting up python-cryptography (1.2.3-1ubuntu0.2) ...
 Setting up ansible (2.7.6-1ppa~xenial) ...
 Processing triggers for libc-bin (2.23-0ubuntu10) ...
-
 ```
-
-
-
 
 ## After Installation
 
-```
-(xenial)ico@localhost:~/Downloads/mainframe/ansible$ ansible --version
+Ansible should now be usable:
+
+```console
+$ ansible --version
 ansible 2.7.6
   config file = /etc/ansible/ansible.cfg
   configured module search path = [u'/home/ico/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
