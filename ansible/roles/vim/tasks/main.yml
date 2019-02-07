@@ -2,14 +2,14 @@
 - name: Install vim config file
   copy:
     src: vimrc
-    dest: /home/ico/.vimrc
+    dest: '{{ ansible_env.HOME }}/.vimrc'
 
 - name: Create Colorscheme directory
   file:
-    path: /home/ico/.vim/colors
+    path: '{{ ansible_env.HOME }}/.vim/colors'
     state: directory
 
 - name: Install vim colorscheme file(s)
   copy:
     src: sublimemonokai.vim
-    dest: /home/ico/.vim/colors/sublimemonokai.vim
+    dest: '{{ ansible_env.HOME }}/.vim/colors/sublimemonokai.vim'
