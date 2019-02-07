@@ -1,3 +1,11 @@
+# Prerequisite Knowlege
+
+Before continuing, it is good to familiarize yourself with the folowing topics.
+
+- [YAML](https://yaml.org/)
+- [Ansible Documentation](https://docs.ansible.com/)
+
+
 # Ansible Guide
 
 ## Before Installation
