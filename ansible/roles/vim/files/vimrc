@@ -1,5 +1,28 @@
-set rnu
+" For more in depth information check out http://vimdoc.sourceforge.net/htmldoc/options.html#option-summary
+
+" relative line number
+set relativenumber
+
+" Show line numbers on the screen
 set number
+
+" Highlight the current line
 set cursorline
+
+" Enable syntax highlighting
 syntax on
+
+" Set the color scheme
 colorscheme sublimemonokai
+
+" Display the cursors position
+set ruler
+
+" Display the current file title
+set title
+
+" Expand tabs into spaces
+set expandtab
+
+" new line inherits previous lines indentation
+set autoindent
