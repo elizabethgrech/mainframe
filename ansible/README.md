@@ -1,3 +1,11 @@
+# Prerequisite Knowlege
+
+Before continuing, it is good to familiarize yourself with the folowing topics.
+
+- [YAML](https://yaml.org/)
+- [Ansible Documentation](https://docs.ansible.com/)
+
+
 # Ansible Guide
 
 ## Before Installation
@@ -268,4 +276,13 @@ ansible 2.7.6
   executable location = /usr/bin/ansible
   python version = 2.7.12 (default, Nov 12 2018, 14:36:49) [GCC 5.4.0 20160609]
 
+```
+
+
+## Running Ansible
+
+Run the following command on the YAML ``site.yml``
+
+```sh
+ansible-playbook site.yml
 ```
