@@ -1,0 +1,5 @@
+---
+- name: Install bash config file
+  copy:
+    src: bashrc
+    dest: '{{ ansible_env.HOME }}/.bashrc'
