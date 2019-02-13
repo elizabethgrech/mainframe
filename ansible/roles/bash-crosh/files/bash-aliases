@@ -1,0 +1,3 @@
+# Aliases for crosh chroot environments with git repos
+alias vtc='cd ~/Downloads/VTC_courses/'
+alias mainframe='cd ~/Downloads/mainframe/'

@@ -1,0 +1,5 @@
+---
+- name: Install .bash_aliases config file
+  copy:
+    src: bash-aliases
+    dest: '{{ ansible_env.HOME }}/.bash_aliases'
