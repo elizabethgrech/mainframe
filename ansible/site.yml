@@ -2,6 +2,6 @@
   roles:
     - vim
 
-- hosts: chromebook
+- hosts: chrombook
   roles:
-    - bash-chrosh
+    - bash-crosh
