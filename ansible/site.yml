@@ -2,6 +2,17 @@
   roles:
     - vim
 
-- hosts: chrombook
+- hosts: chromebooks
   roles:
     - bash-crosh
+
+- hosts: media-servers
+  roles:
+    - plex
+    - ubooquity
+
+- hosts: pirate-servers
+  roles:
+    - vpn
+    - transmission
+
