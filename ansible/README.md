@@ -286,3 +286,11 @@ Run the following command on the YAML ``site.yml``
 ```sh
 ansible-playbook site.yml
 ```
+
+
+### Run to Retrieve all Ansible facts
+```sh
+ansible all -m setup
+```
+
+You can replace ``all`` with ``localhost`` if just running on local machine that ansible is run on.
