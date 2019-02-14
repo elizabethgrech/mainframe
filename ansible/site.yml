@@ -10,6 +10,7 @@
   roles:
     - plex
     - ubooquity
+    - openjdk-8-jre #required by current version of ubooquity
 
 - hosts: pirate-servers
   roles:
