@@ -1,20 +1,25 @@
 ---
+- name: Install openjdk-8-jre
+  apt:
+      name: openjdk-8-jre
+      state: present
+
 - name: Create Ubooquity Directory
   file:
       path: '{{ ansible_env.HOME }}/ubooquity/'
       state: directory
----
+
 - name: Download "latest" Ubooquity zip
   get_url:
       url: http://vaemendis.net/ubooquity/downloads/Ubooquity-2.1.2.zip
       dest: '{{ ansible_env.HOME }}/ubooquity/.'
       mode: 01777
----
+
 - name: Copy provided start|stop|status script from Ubooquity
   copy:
       src: ubooquity.sh
       dest: '{{ ansible_env.HOME }}/ubooquity/ubooquity.sh'
----
+
 - name: Copy provided readLogs script from Ubooquity
   copy:
       src: readLogs.sh
