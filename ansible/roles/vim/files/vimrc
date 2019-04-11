@@ -23,6 +23,8 @@ set title
 
 " Expand tabs into spaces
 set expandtab
+" But not for make files
+autocmd FileType make set noexpandtab
 
 " new line inherits previous lines indentation
 set autoindent
