@@ -5,17 +5,17 @@ bob
 [chromebooks]
 chrombook
 
-[rasp-pi-zero]
+[rasppizero]
 saucymare
 phong
 
-[media-servers]
+[mediaservers]
 
 
-[pirate-servers]
+[pirateservers]
 saucymare
 
 
-[headless-servers]
+[headlessservers]
 saucymare
 phong

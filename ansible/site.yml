@@ -6,7 +6,7 @@
   roles:
     - bash-crosh
 
-- hosts: media-servers
+- hosts: mediaservers
   roles:
     - plex
     - ubooquity
