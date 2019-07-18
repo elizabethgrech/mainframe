@@ -1,0 +1,6 @@
+# Ensure the --check flag works.
+- name: Install python-apt on Debian hosts
+  package:
+    name: python-apt
+    state: present
+  when: ansible_distribution == 'Debian'

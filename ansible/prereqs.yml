@@ -1,0 +1,4 @@
+# Run this playbook without the --check flag.
+- hosts: all
+  roles:
+    - check-flag
