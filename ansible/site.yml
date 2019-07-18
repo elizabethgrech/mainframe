@@ -10,9 +10,3 @@
   roles:
     - plex
     - ubooquity
-
-- hosts: pirate-servers
-  roles:
-    - vpn
-    - transmission
-
