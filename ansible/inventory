@@ -12,10 +12,6 @@ phong
 [mediaservers]
 
 
-[pirateservers]
-saucymare
-
-
 [headlessservers]
 saucymare
 phong
