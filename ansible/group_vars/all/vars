@@ -1,0 +1,3 @@
+user_ico_password: '{{ vault_user_ico_password }}'
+
+# vim:ft=yaml:

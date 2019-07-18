@@ -1,5 +1,6 @@
 - hosts: all
   roles:
+    - user-ico
     - vim
 
 - hosts: chromebooks

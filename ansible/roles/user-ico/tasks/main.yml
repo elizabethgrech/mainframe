@@ -1,0 +1,10 @@
+---
+- name: Create user ico
+  user:
+    name: ico
+    groups: sudo
+    comment: Liz
+    password: '{{ user_ico_password }}'
+  become: true
+
+  # TODO: Create ~/.ssh/ and install public SSH keys.
