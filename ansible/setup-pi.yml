@@ -1,0 +1,8 @@
+# This playbook should be run against a Raspberry Pi after it's first been set
+# up. Do not use the --check flag.
+- hosts: all
+  vars:
+    ansible_user: pi
+  roles:
+    - check-flag
+    - user-ico
