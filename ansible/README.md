@@ -287,6 +287,13 @@ Run the following command on the YAML ``site.yml``
 ansible-playbook site.yml
 ```
 
+```sh
+ ansible-playbook site.yml --ask-vault-pass
+```
+
+```sh
+ ansible-playbook site.yml --check
+```
 
 ### Run to Retrieve all Ansible facts
 ```sh
