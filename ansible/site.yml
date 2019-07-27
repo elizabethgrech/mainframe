@@ -6,6 +6,11 @@
   roles:
     - bash-crosh
 
+- hosts: torrentservers
+  roles:
+    - transmission
+    - feedtransmission
+
 - hosts: mediaservers
   roles:
     - plex

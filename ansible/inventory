@@ -1,6 +1,5 @@
 [workstations]
 chrombook
-bob
 
 [chromebooks]
 chrombook
@@ -10,8 +9,11 @@ saucymare
 phong
 
 [mediaservers]
-
+phong
 
 [headlessservers]
 saucymare
 phong
+
+[torrentservers]
+saucymare
