@@ -1,0 +1,7 @@
+---
+- name: Install transmission
+  package:
+    name: transmission-cli
+    state: present
+
+#TODO: configure transmission
