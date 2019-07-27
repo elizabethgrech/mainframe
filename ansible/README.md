@@ -287,12 +287,21 @@ Run the following command on the YAML ``site.yml``
 ansible-playbook site.yml
 ```
 
+### Asking for passwords
 ```sh
  ansible-playbook site.yml --ask-vault-pass
 ```
+```sh
+ ansible-playbook site.yml --ask-pass
+```
 
+### Check validity before running a playbook
 ```sh
  ansible-playbook site.yml --check
+```
+### Limit playbook to specific host
+```sh
+ ansible-playbook site.yml --l phong
 ```
 
 ### Run to Retrieve all Ansible facts
