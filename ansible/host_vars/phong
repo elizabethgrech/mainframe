@@ -1,0 +1,5 @@
+--- #phong
+ansible_host: 192.168.8.000
+ansible_user: pi
+
+# vim:ft=yaml:

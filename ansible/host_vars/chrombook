@@ -1,2 +1,4 @@
----
+--- #chrombook
 ansible_connection: local
+
+# vim:ft=yaml:
