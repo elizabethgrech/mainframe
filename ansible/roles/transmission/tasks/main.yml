@@ -1,7 +1,7 @@
 ---
-- name: Install transmission
+- name: Install transmission (cli and web interface)
   package:
-    name: transmission-cli
+    name: transmission-daemon
     state: present
 
 #TODO: configure transmission
