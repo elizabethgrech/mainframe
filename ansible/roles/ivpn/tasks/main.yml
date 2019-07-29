@@ -1,0 +1,14 @@
+---
+ - include_role:
+     name: openvpn
+
+ - name: Download ivpn-openvpn-config.zip
+   get_url:
+     url: https://www.ivpn.net/releases/config/ivpn-openvpn-config.zip
+     dest: /home/user
+     mode: '0440'
+
+ - name: Extract ivpn-openvpn-config.zip to ivpn-openvpn-config
+   unarchive:
+       src: /home/user/ivpn-openvpn-config.zip
+       dest: /home/user/ivpn-openvpn-config
