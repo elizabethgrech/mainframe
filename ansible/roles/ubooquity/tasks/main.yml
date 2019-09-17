@@ -1,6 +1,7 @@
 ---
 - include_role:
     name: java
+# https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
 
 - name: Create Ubooquity Directory
   file:
